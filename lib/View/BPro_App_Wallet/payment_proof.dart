@@ -76,7 +76,7 @@ class _PaymentProofState extends State<PaymentProof> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Color.fromARGB(255, 244, 176, 130),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: GestureDetector(
@@ -149,7 +149,7 @@ class _PaymentProofState extends State<PaymentProof> {
               // Container(
               //     width: Get.width,
               //     decoration: BoxDecoration(
-              //         border: Border.all(color: Colors.green),
+              //         border: Border.all(color: Color.fromARGB(255, 244, 176, 130)),
               //         borderRadius: BorderRadius.circular(10),
               //         color: Colors.white),
               //     child: Padding(
@@ -272,7 +272,8 @@ class _PaymentProofState extends State<PaymentProof> {
                       offset: Offset(0, 4),
                     ),
                   ],
-                  border: Border.all(color: Colors.green, width: 1.5),
+                  border: Border.all(
+                      color: Color.fromARGB(255, 244, 176, 130), width: 1.5),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -347,7 +348,8 @@ class _PaymentProofState extends State<PaymentProof> {
                             );
                           },
                           child: const Icon(Icons.copy,
-                              color: Colors.green, size: 20),
+                              color: Color.fromARGB(255, 244, 176, 130),
+                              size: 20),
                         )
                       ],
                     ),
@@ -495,7 +497,7 @@ class _PaymentProofState extends State<PaymentProof> {
                     },
                     child: Text('SUBMIT',
                         style: TextStyle(
-                            color: Colors.green,
+                            color: Color.fromARGB(255, 244, 176, 130),
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 4,

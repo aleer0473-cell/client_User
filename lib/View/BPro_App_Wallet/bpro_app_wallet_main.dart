@@ -30,9 +30,10 @@ class _BProWalletMainState extends State<BProWalletMain> {
           type: BottomNavigationBarType.fixed,
           onTap: onTabTapped,
           currentIndex: _currentIndex,
-          backgroundColor: Colors.white,
-          selectedItemColor: ColorConstant().appColor,
-          unselectedItemColor: Colors.grey[700],
+          // backgroundColor: Colors.white,
+          backgroundColor: Color.fromARGB(255, 109, 79, 114),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white,
           selectedFontSize: 15,
           unselectedFontSize: 15,
           showSelectedLabels: true,
@@ -71,7 +72,8 @@ class _BProWalletMainState extends State<BProWalletMain> {
               label: 'Dashboard',
             ),
             BottomNavigationBarItem(
-              backgroundColor: Color.fromARGB(255, 192, 255, 194),
+              // backgroundColor: Color.fromARGB(255, 192, 255, 194),
+              backgroundColor: Color.fromARGB(255, 72, 10, 83),
               icon: Container(
                   height: 40,
                   width: 40,

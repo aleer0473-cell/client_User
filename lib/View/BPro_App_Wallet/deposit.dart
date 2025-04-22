@@ -195,6 +195,7 @@
 import 'package:betapp/View/BPro_App_Wallet/select_account_to_transfaer.dart';
 import 'package:betapp/utills/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Deposit extends StatefulWidget {
@@ -239,7 +240,7 @@ class _DepositState extends State<Deposit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: const Color.fromARGB(255, 244, 176, 130),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: GestureDetector(
@@ -293,7 +294,7 @@ class _DepositState extends State<Deposit> {
                 style: TextStyle(
                     color: Colors.white54, fontSize: 12, fontFamily: 'Kanit'),
               ),
-              const SizedBox(height: 15),
+              SizedBox(height: 5),
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 alignment: Alignment.center,
@@ -353,8 +354,8 @@ class _DepositState extends State<Deposit> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.all(12),
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.grey.withValues(alpha: 0.10),
+                          backgroundColor: Colors.grey.withValues(alpha: 0.10),
                         ),
                         onPressed: isAmountValid()
                             ? () {
@@ -372,7 +373,7 @@ class _DepositState extends State<Deposit> {
                             : null,
                         child: const Text('NEXT',
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: 4,

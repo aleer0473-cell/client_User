@@ -61,7 +61,7 @@ class _DashboardState extends State<Dashboard> {
           await launch('http://Wa.me/${userPhoneNumber}');
         },
       ),
-      backgroundColor: ColorConstant().appColor,
+      backgroundColor: Color.fromARGB(255, 72, 10, 83),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
         child: Column(
@@ -110,7 +110,7 @@ class _DashboardState extends State<Dashboard> {
               height: appSize.height * 0.78,
               width: appSize.width,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: const Color.fromARGB(255, 72, 10, 83),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20))),
@@ -147,8 +147,10 @@ class _DashboardState extends State<Dashboard> {
                                     // width: appSize.width * 0.53,
                                     margin: EdgeInsets.symmetric(horizontal: 8),
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: ColorConstant().appColor),
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: const Color.fromARGB(
+                                          255, 255, 88, 144),
+                                    ),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -370,8 +372,10 @@ class _DashboardState extends State<Dashboard> {
                                           alignment: Alignment.center,
                                           decoration: BoxDecoration(
                                               color: status == "pending"
-                                                  ? Colors.red
-                                                  : Colors.green,
+                                                  ? Color.fromARGB(
+                                                      255, 255, 88, 144)
+                                                  : Color.fromARGB(
+                                                      255, 255, 88, 144),
                                               borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(10),
@@ -706,8 +710,15 @@ class _DashboardState extends State<Dashboard> {
                                                                 BorderRadius
                                                                     .circular(
                                                                         10),
-                                                            color: Color(
-                                                                0xffdbad58)),
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                    255,
+                                                                    187,
+                                                                    153,
+                                                                    231)
+                                                                .withValues(
+                                                                    alpha:
+                                                                        0.5)),
                                                         child: Padding(
                                                           padding:
                                                               const EdgeInsets
@@ -806,8 +817,8 @@ class _DashboardState extends State<Dashboard> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(10),
-                                                        color:
-                                                            Color(0xff1ab671),
+                                                        color: Color.fromARGB(
+                                                            255, 130, 238, 190),
                                                       ),
                                                       child: Padding(
                                                         padding:
@@ -892,7 +903,7 @@ class _DashboardState extends State<Dashboard> {
                             Text(
                               'Transaction History',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
                                 fontFamily: 'Kanit',
@@ -901,7 +912,7 @@ class _DashboardState extends State<Dashboard> {
                             Text(
                               'See All',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
                                 fontFamily: 'Kanit',
@@ -987,7 +998,11 @@ class _DashboardState extends State<Dashboard> {
                                                       Container(
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: Colors.white,
+                                                          color: const Color
+                                                                  .fromARGB(255,
+                                                                  116, 98, 142)
+                                                              .withValues(
+                                                                  alpha: 0.5),
                                                           boxShadow: [
                                                             BoxShadow(
                                                               color: Colors.grey
@@ -1055,8 +1070,8 @@ class _DashboardState extends State<Dashboard> {
                                                                       Text(
                                                                         "${ds.get("paymentType").toString().capitalize}",
                                                                         style: TextStyle(
-                                                                            color: ColorConstant()
-                                                                                .appColor,
+                                                                            color: Colors
+                                                                                .white,
                                                                             fontWeight: FontWeight
                                                                                 .bold,
                                                                             fontFamily:
@@ -1070,9 +1085,8 @@ class _DashboardState extends State<Dashboard> {
                                                                             TextStyle(
                                                                           fontFamily:
                                                                               'Kanit',
-                                                                          color: Colors
-                                                                              .grey
-                                                                              .withOpacity(.70),
+                                                                          color:
+                                                                              Colors.white,
                                                                           fontWeight:
                                                                               FontWeight.w400,
                                                                         ),
@@ -1089,13 +1103,13 @@ class _DashboardState extends State<Dashboard> {
                                                                               "${ds.get("bankType").toString().capitalizeFirst} ${ds.get("accountNo").toString().capitalize}",
                                                                               style: TextStyle(
                                                                                 fontFamily: 'Kanit',
-                                                                                color: Colors.grey.withOpacity(.70),
+                                                                                color: Colors.white,
                                                                               ),
                                                                             ),
                                                                             Text(
                                                                               "Rs. ${ds.get("amount").toString()}",
                                                                               style: TextStyle(
-                                                                                color: ColorConstant().appColor,
+                                                                                color: Colors.white,
                                                                                 fontSize: 15,
                                                                                 fontFamily: 'Kanit',
                                                                               ),
@@ -1127,7 +1141,7 @@ class _DashboardState extends State<Dashboard> {
                                                                           style:
                                                                               TextStyle(
                                                                             color:
-                                                                                Colors.black,
+                                                                                Colors.white,
                                                                             fontFamily:
                                                                                 'Kanit',
                                                                           ),
@@ -1147,15 +1161,15 @@ class _DashboardState extends State<Dashboard> {
                                                                     ),
                                                                     Text(
                                                                       "$formattedTime / ${ds.get("date").toString().capitalize}",
-                                                                      style:
-                                                                          const TextStyle(
-                                                                        fontWeight:
-                                                                            FontWeight.w500,
-                                                                        fontFamily:
-                                                                            'Kanit',
-                                                                        fontSize:
-                                                                            12,
-                                                                      ),
+                                                                      style: const TextStyle(
+                                                                          fontWeight: FontWeight
+                                                                              .w500,
+                                                                          fontFamily:
+                                                                              'Kanit',
+                                                                          fontSize:
+                                                                              12,
+                                                                          color:
+                                                                              Colors.white),
                                                                     ),
                                                                   ],
                                                                 ),

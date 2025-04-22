@@ -943,6 +943,8 @@
 //   }
 // }
 
+/////////////////////////////////////////////
+
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -1142,6 +1144,7 @@ class _WithdrawState extends State<Withdraw> {
       ),
       builder: (context) {
         return Container(
+          color: Colors.grey.withValues(alpha: 0.10),
           padding: EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -1173,9 +1176,14 @@ class _WithdrawState extends State<Withdraw> {
                 value: 3,
               ),
               SizedBox(height: 20),
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text('CLOSE'),
+              Container(
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 25, 188, 213),
+                    borderRadius: BorderRadius.circular(100)),
+                child: TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text('     CLOSE     '),
+                ),
               ),
             ],
           ),
@@ -1189,43 +1197,59 @@ class _WithdrawState extends State<Withdraw> {
     required String title,
     required int value,
   }) {
-    return ListTile(
-      leading: Icon(icon, color: Color(0xFF1A444F)),
-      title: Text(title),
-      trailing: Radio<int>(
-        value: value,
-        groupValue: _selectedMethod,
-        onChanged: (int? value) {
-          setState(() {
-            _selectedMethod = value;
-            showBankNameField = value == 3;
-            selectedMethodName = title;
-            if (!showBankNameField) {
-              bankNameController.clear();
-            }
-          });
-          Navigator.pop(context);
-        },
-        activeColor: Color(0xFF1A444F),
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(
+            color: const Color.fromARGB(255, 25, 188, 213),
+            width: 2,
+          ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        children: [
+          ListTile(
+            leading: Icon(icon, color: Color(0xFF1A444F)),
+            title: Text(title),
+            trailing: Radio<int>(
+              value: value,
+              groupValue: _selectedMethod,
+              onChanged: (int? value) {
+                setState(() {
+                  _selectedMethod = value;
+                  showBankNameField = value == 3;
+                  selectedMethodName = title;
+                  if (!showBankNameField) {
+                    bankNameController.clear();
+                  }
+                });
+                Navigator.pop(context);
+              },
+              activeColor: Color(0xFF1A444F),
+            ),
+            onTap: () {
+              setState(() {
+                _selectedMethod = value;
+                showBankNameField = value == 3;
+                selectedMethodName = title;
+                if (!showBankNameField) {
+                  bankNameController.clear();
+                }
+              });
+              Navigator.pop(context);
+            },
+          ),
+          SizedBox(
+            width: 20,
+          )
+        ],
       ),
-      onTap: () {
-        setState(() {
-          _selectedMethod = value;
-          showBankNameField = value == 3;
-          selectedMethodName = title;
-          if (!showBankNameField) {
-            bankNameController.clear();
-          }
-        });
-        Navigator.pop(context);
-      },
     );
   }
 
   Widget _buildBalanceCard(DocumentSnapshot userData) {
     return Card(
       elevation: 2,
-      color: Color(0xFF1A444F).withOpacity(0.1),
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
@@ -1359,9 +1383,10 @@ class _WithdrawState extends State<Withdraw> {
     final theme = Theme.of(context);
 
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 25, 188, 213),
       appBar: AppBar(
         title: Text('Withdraw Funds', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color(0xFF1A444F),
+        backgroundColor: const Color.fromARGB(255, 25, 188, 213),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
@@ -1526,3 +1551,5 @@ class _WithdrawState extends State<Withdraw> {
     );
   }
 }
+
+////////////////////////////////////////////////
