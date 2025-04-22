@@ -59,7 +59,7 @@
 //     }
 //   }
 
-//  var time;
+//   var time;
 
 //   var balance;
 
@@ -75,7 +75,8 @@
 
 //     super.initState();
 //   }
-// var cancelId;
+
+//   var cancelId;
 //   @override
 //   Widget build(BuildContext context) {
 //     var appSize = MediaQuery.of(context).size;
@@ -92,8 +93,8 @@
 //               var ds = snapshot.data!;
 //               var username = ds.get("UserName");
 //               var balance = ds.get("balance");
-//               var status=ds.get("userStatus");
-//               var bproName=ds.get("betProname");
+//               var status = ds.get("userStatus");
+//               var bproName = ds.get("betProname");
 //               var id = ds.id;
 //               return Padding(
 //                 padding: EdgeInsets.all(10),
@@ -174,7 +175,6 @@
 //                                             ),
 //                                           ),
 //                                         ),
-
 //                                         const SizedBox(
 //                                           height: 15,
 //                                         ),
@@ -471,15 +471,16 @@
 //                                                     "Please enter the required fields",
 //                                                     context);
 //                                                 return;
-//                                               }
-//                                               else {
-//                                                 if (status.toString().toLowerCase() == "pending") {
+//                                               } else {
+//                                                 if (status
+//                                                         .toString()
+//                                                         .toLowerCase() ==
+//                                                     "pending") {
 //                                                   Customdialog().showInSnackBar(
-//                                                       "Please activate your BPro account from admin", context);
+//                                                       "Please activate your BPro account from admin",
+//                                                       context);
 //                                                   return;
-//                                                 }
-
-//                                                 else {
+//                                                 } else {
 //                                                   String currentDate =
 //                                                       DateFormat('dd-MM-yyyy')
 //                                                           .format(
@@ -512,12 +513,14 @@
 //                                                         accountNoController.text
 //                                                             .trim(),
 //                                                     "status": "pending",
-//                                                     "bproName":bproName.toString(),
+//                                                     "bproName":
+//                                                         bproName.toString(),
 //                                                     "accountTitle":
 //                                                         accountTitleController
 //                                                             .text
 //                                                             .trim(),
-//                                                     "currentDate":DateTime.now(),
+//                                                     "currentDate":
+//                                                         DateTime.now(),
 //                                                     "time": DateTime.now(),
 //                                                   }).then((value) async => {
 //                                                             await firebaseFirestore
@@ -557,9 +560,8 @@
 //                                         Container(
 //                                             color: Color(0xff1a444f)
 //                                                 .withOpacity(0.4),
-//                                             child:  Text(
-//                             "You will receive the payment within ${time}.",
-
+//                                             child: Text(
+//                                                 "You will receive the payment within ${time}.",
 //                                                 style: TextStyle(
 //                                                   color: Colors.black,
 //                                                   fontSize: 13,
@@ -599,7 +601,7 @@
 //                                               });
 
 //                                               var ds1 = docs[index];
-//                                              cancelId=ds1.id;
+//                                               cancelId = ds1.id;
 //                                               var time =
 //                                                   ds1.get("time").toDate();
 //                                               String formattedTime =
@@ -608,7 +610,8 @@
 //                                               var paymentType =
 //                                                   ds1.get("paymentType");
 
-//                                               var userAmount = ds1.get("amount");
+//                                               var userAmount =
+//                                                   ds1.get("amount");
 //                                               return Column(
 //                                                 children: [
 //                                                   SizedBox(
@@ -790,7 +793,8 @@
 //                                           decoration: BoxDecoration(
 //                                               borderRadius:
 //                                                   BorderRadius.circular(7),
-//                                               color: Color(0xff1a444f).withOpacity(.50)),
+//                                               color: Color(0xff1a444f)
+//                                                   .withOpacity(.50)),
 //                                           child: Text(
 //                                             "YOU WILL RECEIVE PAYMENT WITHIN $time.",
 //                                             style: TextStyle(
@@ -844,26 +848,32 @@
 //                                             ),
 //                                           ),
 //                                         ),
-//                                        SizedBox(height: appSize.height*0.19,),
-//                                         MyButton(onPressed: () async {
-//                                           print(cancelId);
-//                                           // double
-//                                           //     enteredAmount =
-//                                           //     double.parse(userAmount);
-//                                           // double
-//                                           //     walletAmount =
-//                                           //     double.parse(balance);
-//                                           // var newAmount =
-//                                           //     walletAmount + enteredAmount;
-//                                           await firebaseFirestore.collection("paymentRecord").doc(cancelId).update({
-//                                             "status": "cancelled",
-//                                           });
-//                                           // await firebaseFirestore.collection("users").doc(firebaseAuth.currentUser!.uid).update({
-//                                           //   "balance": newAmount.toString(),
-//                                           // });
-//                                         },
+//                                         SizedBox(
+//                                           height: appSize.height * 0.19,
+//                                         ),
+//                                         MyButton(
+//                                           onPressed: () async {
+//                                             print(cancelId);
+//                                             // double
+//                                             //     enteredAmount =
+//                                             //     double.parse(userAmount);
+//                                             // double
+//                                             //     walletAmount =
+//                                             //     double.parse(balance);
+//                                             // var newAmount =
+//                                             //     walletAmount + enteredAmount;
+//                                             await firebaseFirestore
+//                                                 .collection("paymentRecord")
+//                                                 .doc(cancelId)
+//                                                 .update({
+//                                               "status": "cancelled",
+//                                             });
+//                                             // await firebaseFirestore.collection("users").doc(firebaseAuth.currentUser!.uid).update({
+//                                             //   "balance": newAmount.toString(),
+//                                             // });
+//                                           },
 //                                           color: Colors.red,
-//                                         text: "Cancel Withdraw",
+//                                           text: "Cancel Withdraw",
 //                                         )
 //                                       ],
 //                                     );
@@ -933,24 +943,12 @@
 //   }
 // }
 
-
-
-
-
-
 import 'dart:convert';
-import 'dart:developer';
-import 'package:betapp/constant/customdialog.dart';
-import 'package:betapp/utills/colors.dart';
-import 'package:betapp/utills/constants.dart';
-import 'package:betapp/widgets/mybutton.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 
@@ -961,7 +959,6 @@ class Withdraw extends StatefulWidget {
 
 class _WithdrawState extends State<Withdraw> {
   int? _selectedMethod = 0;
-  List<Widget> dynamicFields = [];
   bool showBankNameField = false;
 
   final TextEditingController amountController = TextEditingController();
@@ -974,6 +971,7 @@ class _WithdrawState extends State<Withdraw> {
   String? userStatus;
   String? bproName;
   String? pendingWithdrawId;
+  String? selectedMethodName = "Select Payment Method";
 
   @override
   void initState() {
@@ -1018,7 +1016,8 @@ class _WithdrawState extends State<Withdraw> {
     if (amountController.text.isEmpty ||
         accountNoController.text.isEmpty ||
         accountTitleController.text.isEmpty ||
-        (_selectedMethod == 3 && bankNameController.text.isEmpty)) {
+        (_selectedMethod == 3 && bankNameController.text.isEmpty) ||
+        _selectedMethod == 0) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Please fill all required fields')),
       );
@@ -1034,6 +1033,7 @@ class _WithdrawState extends State<Withdraw> {
 
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) => Center(child: CircularProgressIndicator()),
     );
 
@@ -1064,6 +1064,10 @@ class _WithdrawState extends State<Withdraw> {
       accountTitleController.clear();
       accountNoController.clear();
       bankNameController.clear();
+      setState(() {
+        _selectedMethod = 0;
+        selectedMethodName = "Select Payment Method";
+      });
 
       // Send notification
       await _sendAdminNotification();
@@ -1085,6 +1089,7 @@ class _WithdrawState extends State<Withdraw> {
 
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) => Center(child: CircularProgressIndicator()),
     );
 
@@ -1112,7 +1117,8 @@ class _WithdrawState extends State<Withdraw> {
         Uri.parse('https://fcm.googleapis.com/fcm/send'),
         headers: <String, String>{
           'Content-Type': 'application/json',
-          'Authorization': 'key=YOUR_FCM_SERVER_KEY',
+          'Authorization':
+              'key=AAAAsmsxB4E:APA91bFZyx397fcBhq4zoEF5s-dkMnmerylcn0CfYeVIUs7uRXMEgkF5ezw-PFLS0kpwQoN9hPrx1fikqKKGbK7lBX3A85W8Z9F44jvxgYCLtiRUmegh7D5ainm2bTHdMa7jFGphodoX',
         },
         body: jsonEncode({
           'to': '/topics/admin',
@@ -1127,9 +1133,229 @@ class _WithdrawState extends State<Withdraw> {
     }
   }
 
+  void _showPaymentMethodBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Choose Payment Method',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF1A444F),
+                ),
+              ),
+              SizedBox(height: 20),
+              _buildPaymentMethodTile(
+                icon: Icons.phone_android,
+                title: 'EasyPaisa',
+                value: 1,
+              ),
+              Divider(height: 1),
+              _buildPaymentMethodTile(
+                icon: Icons.phone_iphone,
+                title: 'JazzCash',
+                value: 2,
+              ),
+              Divider(height: 1),
+              _buildPaymentMethodTile(
+                icon: Icons.account_balance,
+                title: 'Bank Transfer',
+                value: 3,
+              ),
+              SizedBox(height: 20),
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('CLOSE'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildPaymentMethodTile({
+    required IconData icon,
+    required String title,
+    required int value,
+  }) {
+    return ListTile(
+      leading: Icon(icon, color: Color(0xFF1A444F)),
+      title: Text(title),
+      trailing: Radio<int>(
+        value: value,
+        groupValue: _selectedMethod,
+        onChanged: (int? value) {
+          setState(() {
+            _selectedMethod = value;
+            showBankNameField = value == 3;
+            selectedMethodName = title;
+            if (!showBankNameField) {
+              bankNameController.clear();
+            }
+          });
+          Navigator.pop(context);
+        },
+        activeColor: Color(0xFF1A444F),
+      ),
+      onTap: () {
+        setState(() {
+          _selectedMethod = value;
+          showBankNameField = value == 3;
+          selectedMethodName = title;
+          if (!showBankNameField) {
+            bankNameController.clear();
+          }
+        });
+        Navigator.pop(context);
+      },
+    );
+  }
+
+  Widget _buildBalanceCard(DocumentSnapshot userData) {
+    return Card(
+      elevation: 2,
+      color: Color(0xFF1A444F).withOpacity(0.1),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Text('Available Balance',
+                style: TextStyle(color: Colors.grey, fontSize: 14)),
+            SizedBox(height: 8),
+            Text(
+              'PKR ${userData.get("balance")}',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1A444F),
+              ),
+            ),
+            SizedBox(height: 8),
+            Divider(height: 1, thickness: 1),
+            SizedBox(height: 8),
+            Text('Minimum Withdrawal: PKR 500',
+                style: TextStyle(color: Colors.grey, fontSize: 12)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPendingWithdrawalCard(DocumentSnapshot withdrawData) {
+    final time = withdrawData.get("time").toDate();
+    final formattedTime = DateFormat('hh:mm a').format(time);
+    final method = withdrawData.get("bankType").toString().toUpperCase();
+    final status = withdrawData.get("status").toString().toUpperCase();
+
+    return Card(
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('WITHDRAWAL REQUEST',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Color(0xFF1A444F),
+                    )),
+                Chip(
+                  label: Text(status),
+                  backgroundColor: status == "PENDING"
+                      ? Colors.orange.withOpacity(0.2)
+                      : Colors.green.withOpacity(0.2),
+                  labelStyle: TextStyle(
+                    color: status == "PENDING" ? Colors.orange : Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            _buildDetailRow('Amount', 'PKR ${withdrawData.get("amount")}'),
+            _buildDetailRow('Method', method),
+            _buildDetailRow('Account', withdrawData.get("accountNo")),
+            _buildDetailRow('Title', withdrawData.get("accountTitle")),
+            Divider(height: 32),
+            _buildDetailRow('Date', withdrawData.get("date")),
+            _buildDetailRow('Time', formattedTime),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDetailRow(String label, String value) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 100,
+            child: Text(
+              label,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 14,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProcessingTimeInfo() {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Color(0xFF1A444F).withOpacity(0.1),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Text(
+        'Processing Time: ${withdrawTime ?? '24-48 hours'}',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Color(0xFF1A444F),
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -1167,8 +1393,6 @@ class _WithdrawState extends State<Withdraw> {
               if (hasPendingWithdrawal) {
                 final pendingWithdraw = withdrawSnapshot.data!.docs.first;
                 pendingWithdrawId = pendingWithdraw.id;
-                final time = pendingWithdraw.get("time").toDate();
-                final formattedTime = DateFormat('hh:mm a').format(time);
               }
 
               return SingleChildScrollView(
@@ -1177,7 +1401,6 @@ class _WithdrawState extends State<Withdraw> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (!hasPendingWithdrawal) ...[
-                      // Withdrawal Form
                       _buildBalanceCard(userSnapshot.data!),
                       SizedBox(height: 24),
                       Text('Withdrawal Amount',
@@ -1192,11 +1415,36 @@ class _WithdrawState extends State<Withdraw> {
                           border: OutlineInputBorder(),
                         ),
                       ),
+                      // Replace the TextField with this code:
                       SizedBox(height: 24),
                       Text('Payment Method',
                           style: theme.textTheme.titleMedium),
                       SizedBox(height: 8),
-                      _buildPaymentMethodSelector(),
+                      InkWell(
+                        onTap: _showPaymentMethodBottomSheet,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 16),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade300),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                selectedMethodName!,
+                                style: TextStyle(
+                                  color: _selectedMethod == 0
+                                      ? Colors.grey
+                                      : Colors.black,
+                                ),
+                              ),
+                              Icon(Icons.arrow_drop_down, color: Colors.grey),
+                            ],
+                          ),
+                        ),
+                      ),
                       if (showBankNameField) ...[
                         SizedBox(height: 16),
                         TextField(
@@ -1233,22 +1481,26 @@ class _WithdrawState extends State<Withdraw> {
                             backgroundColor: Color(0xFF1A444F),
                           ),
                           onPressed: _submitWithdrawal,
-                          child: Text('SUBMIT REQUEST'),
+                          child: Text('SUBMIT REQUEST',
+                              style: TextStyle(color: Colors.white)),
                         ),
                       ),
                       SizedBox(height: 16),
                       _buildProcessingTimeInfo(),
                     ] else ...[
-                      // Pending Withdrawal Status
                       _buildPendingWithdrawalCard(
                           withdrawSnapshot.data!.docs.first),
                       SizedBox(height: 24),
                       _buildProcessingTimeInfo(),
                       SizedBox(height: 16),
                       Text('Note:',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          )),
                       SizedBox(height: 8),
                       Text('• You can cancel this withdrawal request'),
+                      SizedBox(height: 4),
                       Text('• Funds will be returned to your wallet'),
                       SizedBox(height: 24),
                       SizedBox(
@@ -1270,149 +1522,6 @@ class _WithdrawState extends State<Withdraw> {
             },
           );
         },
-      ),
-    );
-  }
-
-  Widget _buildBalanceCard(DocumentSnapshot userData) {
-    return Card(
-      color: Color(0xFF1A444F).withOpacity(0.1),
-      child: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Text('Available Balance', style: TextStyle(color: Colors.grey)),
-            SizedBox(height: 8),
-            Text(
-              'PKR ${userData.get("balance")}',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Divider(),
-            SizedBox(height: 8),
-            Text('Minimum Withdrawal: PKR 500',
-                style: TextStyle(color: Colors.grey, fontSize: 12)),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildPaymentMethodSelector() {
-    return Column(
-      children: [
-        ListTile(
-          leading: Icon(Icons.phone_android, color: Color(0xFF1A444F)),
-          title: Text('EasyPaisa'),
-          trailing: Radio<int>(
-            value: 1,
-            groupValue: _selectedMethod,
-            onChanged: _handleMethodSelection,
-            activeColor: Color(0xFF1A444F),
-          ),
-          onTap: () => _handleMethodSelection(1),
-        ),
-        Divider(height: 1),
-        ListTile(
-          leading: Icon(Icons.phone_iphone, color: Color(0xFF1A444F)),
-          title: Text('JazzCash'),
-          trailing: Radio<int>(
-            value: 2,
-            groupValue: _selectedMethod,
-            onChanged: _handleMethodSelection,
-            activeColor: Color(0xFF1A444F),
-          ),
-          onTap: () => _handleMethodSelection(2),
-        ),
-        Divider(height: 1),
-        ListTile(
-          leading: Icon(Icons.account_balance, color: Color(0xFF1A444F)),
-          title: Text('Bank Transfer'),
-          trailing: Radio<int>(
-            value: 3,
-            groupValue: _selectedMethod,
-            onChanged: _handleMethodSelection,
-            activeColor: Color(0xFF1A444F),
-          ),
-          onTap: () => _handleMethodSelection(3),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildPendingWithdrawalCard(DocumentSnapshot withdrawData) {
-    final time = withdrawData.get("time").toDate();
-    final formattedTime = DateFormat('hh:mm a').format(time);
-    final method = withdrawData.get("bankType").toString().toUpperCase();
-    final status = withdrawData.get("status").toString().toUpperCase();
-
-    return Card(
-      child: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('WITHDRAWAL REQUEST',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                Chip(
-                  label: Text(status),
-                  backgroundColor: status == "PENDING"
-                      ? Colors.orange.withOpacity(0.2)
-                      : Colors.green.withOpacity(0.2),
-                  labelStyle: TextStyle(
-                      color:
-                          status == "PENDING" ? Colors.orange : Colors.green),
-                ),
-              ],
-            ),
-            SizedBox(height: 16),
-            _buildDetailRow('Amount', 'PKR ${withdrawData.get("amount")}'),
-            _buildDetailRow('Method', method),
-            _buildDetailRow('Account', withdrawData.get("accountNo")),
-            _buildDetailRow('Title', withdrawData.get("accountTitle")),
-            Divider(height: 32),
-            _buildDetailRow('Date', withdrawData.get("date")),
-            _buildDetailRow('Time', formattedTime),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildDetailRow(String label, String value) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 4),
-      child: Row(
-        children: [
-          // SizedBox(
-          //   width: 100,
-          //   child: Text(label, style: TextStyle(color: Colors.grey)),
-          // Text(value),
-          SizedBox(
-            width: 100,
-            child: Text(label, style: TextStyle(color: Colors.grey)),
-          ),
-          Text(value),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildProcessingTimeInfo() {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Color(0xFF1A444F).withOpacity(0.1),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        'Processing Time: ${withdrawTime ?? '24-48 hours'}',
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Color(0xFF1A444F)),
       ),
     );
   }
