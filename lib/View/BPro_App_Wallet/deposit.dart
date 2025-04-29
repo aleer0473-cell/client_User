@@ -255,134 +255,138 @@ class _DepositState extends State<Deposit> {
         ),
         centerTitle: true,
       ),
-      body: Theme(
-        data: Theme.of(context).copyWith(
-          textSelectionTheme: TextSelectionThemeData(
-            cursorColor: ColorConstant().appColor,
-            selectionHandleColor: ColorConstant().appColor,
+      body: SingleChildScrollView(
+        child: Theme(
+          data: Theme.of(context).copyWith(
+            textSelectionTheme: TextSelectionThemeData(
+              cursorColor: ColorConstant().appColor,
+              selectionHandleColor: ColorConstant().appColor,
+            ),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(height: 2.3, width: 30, color: Colors.white),
-                  const SizedBox(width: 7),
-                  Container(height: 2.3, width: 30, color: Colors.grey),
-                  const SizedBox(width: 7),
-                  Container(height: 2.3, width: 30, color: Colors.grey),
-                ],
-              ),
-              SizedBox(height: Get.height * 0.05),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(height: 2.3, width: 30, color: Colors.white),
+                    const SizedBox(width: 7),
+                    Container(height: 2.3, width: 30, color: Colors.grey),
+                    const SizedBox(width: 7),
+                    Container(height: 2.3, width: 30, color: Colors.grey),
+                  ],
+                ),
+                SizedBox(height: Get.height * 0.05),
 
-              // Instructions
-              const Text(
-                'Enter Amount you want to deposit in Batme Wallet',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Kanit'),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'Minimum deposit amount is Rs. 500',
-                style: TextStyle(
-                    color: Colors.white54, fontSize: 12, fontFamily: 'Kanit'),
-              ),
-              SizedBox(height: 5),
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                alignment: Alignment.center,
-                child: Text(
-                  amountController.text.isEmpty
-                      ? 'Rs. 0'
-                      : 'Rs. ${amountController.text}',
+                // Instructions
+                const Text(
+                  'Enter Amount you want to deposit in Batme Wallet',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: amountController.text.isEmpty
-                        ? Colors.white
-                        : Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Kanit',
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Kanit'),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Minimum deposit amount is Rs. 500',
+                  style: TextStyle(
+                      color: Colors.white54, fontSize: 12, fontFamily: 'Kanit'),
+                ),
+                SizedBox(height: 5),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  alignment: Alignment.center,
+                  child: Text(
+                    amountController.text.isEmpty
+                        ? 'Rs. 0'
+                        : 'Rs. ${amountController.text}',
+                    style: TextStyle(
+                      color: amountController.text.isEmpty
+                          ? Colors.white
+                          : Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Kanit',
+                    ),
                   ),
                 ),
-              ),
 
-              const SizedBox(height: 25),
-              _buildNumberPad(),
-              // isAmountValid()
-              //     ? SizedBox(
-              //         width: 210,
-              //         child: ElevatedButton(
-              //           style: ElevatedButton.styleFrom(
-              //             padding: const EdgeInsets.all(12),
-              //             foregroundColor: Colors.white,
-              //             backgroundColor: Colors.white,
-              //           ),
-              //           onPressed: () {
-              //             amount = amountController.text;
-              //             Navigator.push(
-              //               context,
-              //               MaterialPageRoute(
-              //                 builder: (context) => SelectAccountToTransfer(
-              //                   amount: amount,
-              //                 ),
-              //               ),
-              //             );
-              //           },
-              //           child: const Text(
-              //             'NEXT',
-              //             style: TextStyle(
-              //                 color: Colors.green,
-              //                 fontSize: 15,
-              //                 fontWeight: FontWeight.bold,
-              //                 letterSpacing: 4,
-              //                 height: 1.5,
-              //                 fontFamily: 'Kanit'),
-              //           ),
-              //         ),
-              //       )
-              //     : const SizedBox(),
-              isAmountValid()
-                  ? Container(
-                      width: 210,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(12),
-                          foregroundColor: Colors.grey.withValues(alpha: 0.10),
-                          backgroundColor: Colors.grey.withValues(alpha: 0.10),
-                        ),
-                        onPressed: isAmountValid()
-                            ? () {
-                                amount = amountController.text;
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        SelectAccountToTransfer(
-                                      amount: amount,
+                const SizedBox(height: 25),
+                _buildNumberPad(),
+                // isAmountValid()
+                //     ? SizedBox(
+                //         width: 210,
+                //         child: ElevatedButton(
+                //           style: ElevatedButton.styleFrom(
+                //             padding: const EdgeInsets.all(12),
+                //             foregroundColor: Colors.white,
+                //             backgroundColor: Colors.white,
+                //           ),
+                //           onPressed: () {
+                //             amount = amountController.text;
+                //             Navigator.push(
+                //               context,
+                //               MaterialPageRoute(
+                //                 builder: (context) => SelectAccountToTransfer(
+                //                   amount: amount,
+                //                 ),
+                //               ),
+                //             );
+                //           },
+                //           child: const Text(
+                //             'NEXT',
+                //             style: TextStyle(
+                //                 color: Colors.green,
+                //                 fontSize: 15,
+                //                 fontWeight: FontWeight.bold,
+                //                 letterSpacing: 4,
+                //                 height: 1.5,
+                //                 fontFamily: 'Kanit'),
+                //           ),
+                //         ),
+                //       )
+                //     : const SizedBox(),
+                isAmountValid()
+                    ? Container(
+                        width: 210,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.all(12),
+                            foregroundColor:
+                                Colors.grey.withValues(alpha: 0.10),
+                            backgroundColor:
+                                Colors.grey.withValues(alpha: 0.10),
+                          ),
+                          onPressed: isAmountValid()
+                              ? () {
+                                  amount = amountController.text;
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          SelectAccountToTransfer(
+                                        amount: amount,
+                                      ),
                                     ),
-                                  ),
-                                );
-                              }
-                            : null,
-                        child: const Text('NEXT',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 4,
-                                height: 1.5,
-                                fontFamily: 'Kanit')),
-                      ),
-                    )
-                  : SizedBox(),
-            ],
+                                  );
+                                }
+                              : null,
+                          child: const Text('NEXT',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 4,
+                                  height: 1.5,
+                                  fontFamily: 'Kanit')),
+                        ),
+                      )
+                    : SizedBox(),
+              ],
+            ),
           ),
         ),
       ),
