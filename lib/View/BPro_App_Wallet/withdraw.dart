@@ -81,7 +81,7 @@ class _WithdrawState extends State<Withdraw> {
   Widget build(BuildContext context) {
     var appSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 244, 176, 130),
       body: StreamBuilder(
           stream: firebaseFirestore
               .collection("users")
@@ -243,7 +243,8 @@ class _WithdrawState extends State<Withdraw> {
                                                       Radio<int>(
                                                         value: 1,
                                                         activeColor:
-                                                            Color(0xff1a444f),
+                                                            // Color(0xff1a444f),
+                                                            Colors.white,
                                                         groupValue: _radioValue,
                                                         onChanged:
                                                             (int? value) {
@@ -292,7 +293,8 @@ class _WithdrawState extends State<Withdraw> {
                                                       Radio<int>(
                                                         value: 2,
                                                         activeColor:
-                                                            Color(0xff1a444f),
+                                                            // Color(0xff1a444f),
+                                                            Colors.white,
                                                         groupValue: _radioValue,
                                                         onChanged:
                                                             (int? value) {
@@ -341,7 +343,8 @@ class _WithdrawState extends State<Withdraw> {
                                                       Radio<int>(
                                                         value: 3,
                                                         activeColor:
-                                                            Color(0xff1a444f),
+                                                            // Color(0xff1a444f),
+                                                            Colors.white,
                                                         groupValue: _radioValue,
                                                         onChanged:
                                                             (int? value) {
@@ -458,7 +461,9 @@ class _WithdrawState extends State<Withdraw> {
                                               padding: const EdgeInsets.all(10),
                                               foregroundColor: Colors.white,
                                               backgroundColor:
-                                                  Color(0xff1a444f),
+                                                  // Color(0xff1a444f),
+                                                  Colors.white
+                                                      .withValues(alpha: 0.2),
                                             ),
                                             onPressed: () {
                                               if (amountController
@@ -563,7 +568,7 @@ class _WithdrawState extends State<Withdraw> {
                                             child: Text(
                                                 "You will receive the payment within ${time}.",
                                                 style: TextStyle(
-                                                  color: Colors.black,
+                                                  color: Colors.white,
                                                   fontSize: 13,
                                                   fontFamily: 'Kanit',
                                                   fontWeight: FontWeight.bold,

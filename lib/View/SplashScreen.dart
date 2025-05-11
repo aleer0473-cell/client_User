@@ -37,7 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              "assets/images/playstore.png",
+              // "assets/images/playstore.png",
+              "assets/images/logo2.jpeg",
               scale: 3,
             )),
       ),

@@ -72,7 +72,7 @@ class _DashboardState extends State<Dashboard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Batme Wallet',
+                  Text('Batproexch App',
                       style: TextStyle(
                         fontSize: 22,
                         color: ColorConstant().whiteColor,
@@ -94,10 +94,25 @@ class _DashboardState extends State<Dashboard> {
                           radius: 48,
                           backgroundColor: ColorConstant().whiteColor,
                           backgroundImage: AssetImage(
-                            "assets/images/dp.png",
+                            // "assets/images/dp.png",
+                            "assets/images/logo2.jpeg",
                           ),
                         )),
                   ),
+                  // InkWell(
+                  //   onTap: () {
+                  //     Get.to(Profile());
+                  //   },
+                  //   child: Container(
+                  //     height: 50,
+                  //     width: 50,
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(50),
+                  //       color: ColorConstant().whiteColor,
+                  //     ),
+                  //     child: Image.asset("assets/images/logo2.jpeg"),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
