@@ -105,7 +105,7 @@ class _AnnoucementScreenState extends State<AnnoucementScreen> {
                           Share.share(
                               "${ds?.get("shareText")}",
 
-                              subject: 'Batme Wallet Admin Note');
+                              subject: 'Batproexch App Admin Note');
                         },
                         child: _buildInfoRow(
                           icon: Icons.share,

@@ -281,7 +281,7 @@ class _DepositState extends State<Deposit> {
 
                 // Instructions
                 const Text(
-                  'Enter Amount you want to deposit in Batme Wallet',
+                  'Enter Amount you want to deposit in Batproexch App',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 18,

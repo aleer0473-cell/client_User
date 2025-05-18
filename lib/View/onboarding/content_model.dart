@@ -9,7 +9,7 @@ class UnbordingContent {
 
 List<UnbordingContent> contents = [
   UnbordingContent(
-    title: 'Welcome to Batme Wallet',
+    title: 'Welcome to Batproexch App',
     image: 'assets/images/wallet.jpg',
     discription: "The ultimate app for gaming enthusiasts who crave excitement and big wins! Dive into a thrilling variety of games and unlock your chance to win millions."
   ),
@@ -17,7 +17,7 @@ List<UnbordingContent> contents = [
   UnbordingContent(
     title: 'Explore the Best Online Sports and Games',
     image: 'assets/images/game.png',
-    discription: "Batme Wallet allows you to dive into thousands of online games, including cricket, hockey, horse riding, volleyball, and dog racing. Play and earn millions with the ultimate gaming experience"
+    discription: "Batproexch App allows you to dive into thousands of online games, including cricket, hockey, horse riding, volleyball, and dog racing. Play and earn millions with the ultimate gaming experience"
   ),
 ];
 

@@ -844,7 +844,7 @@ class _WithdrawState extends State<Withdraw> {
                                           child: Align(
                                             alignment: Alignment.topLeft,
                                             child: Text(
-                                              "2-Apke paise wapis apke Batme Wallet account me add hojainge",
+                                              "2-Apke paise wapis apke Batproexch App account me add hojainge",
                                               style: TextStyle(
                                                   fontSize:
                                                       appSize.width * 0.033,

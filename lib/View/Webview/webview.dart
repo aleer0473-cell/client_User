@@ -171,7 +171,7 @@ class StoreWebViewState extends State<StoreWebView> {
           },
           child: Icon(Icons.arrow_back, color: Colors.white),
         ),
-        title: Text("Batme Wallet", style: TextStyle(color: Colors.white)),
+        title: Text("Batproexch App", style: TextStyle(color: Colors.white)),
       )
           : null,
       body: Stack(
