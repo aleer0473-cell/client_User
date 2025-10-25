@@ -220,7 +220,7 @@ class StoreWebViewState extends State<StoreWebView> {
   Future<String?> _getCookie(String name) async {
     CookieManager cookieManager = CookieManager.instance();
     List<Cookie> cookies = await cookieManager.getCookies(
-      url: WebUri("https://www.bpexch.com"), // 🔹 Apni website ka domain yahan dein
+      url: WebUri("https://www.bpexch.net"), // 🔹 Apni website ka domain yahan dein
     );
 
     for (var cookie in cookies) {
